@@ -2,56 +2,109 @@
 <html>
 
 <head>
-<style>
-#header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;	      
-}
-#section {
-    width:350px;
-    float:left;
-    padding:10px;	 	 
-}
-#footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-   	padding:5px;	 	 
-}
-</style>
+	<!--定义窗口名字-->
+	<title>测试网页</title>
+	<script>
+		function showDate(){
+            document.getElementById("demo").innerHTML=Date();
+		}
+	</script>
+    <style>
+    	.header{
+        	background-color:black;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        .nav{
+        	line-height:30px;
+            background-color:#dff0ff;
+			height:100%;
+            position: fixed;
+        }
+        .ul_{
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .li_{
+            text-decoration: none;
+            color: black;
+        }
+        .section{
+        	width:auto;
+            padding:0px 150px;
+        }
+        .footer{
+            color:black;
+            text-align:center;
+        }
+    </style>
 </head>
 
-<body>
-    <div id="header">
+<!--修改背景颜色-->
+<body bgcolor="f0f8ff">
+  
+    <div class="header">
     	<h1>LoveLive!!</h1>
     </div>
-    <div id="nav">
-    	南小鸟<br>
-        矢泽妮可<br>
-        高坂穗乃果<br>
-        园田海未<br>
-        洵濑绘理<br>
-        东条希<br>
-        星空凛<br>
-        小泉花阳<br>
-        西木野真姬<br>
+    
+    <div class="nav">
+        <ul class="ul_">
+            <li>
+                <a href="https://www.baidu.com" class="li_">南小鸟</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">东条希</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">星空凛</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">矢泽妮可</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">园田海未</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">洵濑绘理</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">小泉花阳</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">高坂穗乃果</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" class="li_">西木野真姬</a>
+            </li>
+        </ul>
     </div>
-    <div id="section">
-    	<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1189063798,2093587943&fm=26&gp=0.jpg" alt="???"/>
+    
+    <div class="section">
+		<!--标题，h1~h6，字体越来越小-->
+    	<h1 align="center">南小鸟</h1>
+		<hr>
+        <p>
+        	suki suki suki suki suki suki suki suki 
+        </p>
+        <p>
+        	idol idol idol idol idol idol idol idol 
+        </p>
+   		<hr>
+		
+		<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1189063798,2093587943&fm=26&gp=0.jpg" alt="???"/>
+		<a href="https://www.baidu.com">bilibili</a>
+		<p id="demo">请你正常一点</p>
+		<button type="button" onclick="showDate()">显示日期</button>
     </div>
-    <div id="footer">
+    
+    <div class="footer">
 		Copyright W3School.com.cn
 	</div>
 </body>
+
 </html>
