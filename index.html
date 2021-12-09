@@ -4,42 +4,42 @@
 <head>
 	<!--定义窗口名字-->
 	<title>测试网页</title>
-	
-    <style>
-    	.header{
-        	background-color:black;
-            color:white;
-            text-align:center;
-            padding:5px;
-        }
-        .nav{
-        	line-height:30px;
-            background-color:#dff0ff;
-			height:100%;
-            position: fixed;
-        }
-        .ul_{
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-        }
-        .li_{
-            text-decoration: none;
-            color: black;
-        }
-        .section{
-        	width:auto;
-            padding:0px 150px;
-        }
-        .footer{
-            color:black;
-            text-align:center;
-        }
-    </style>
 </head>
+
+<style>
+    .header{
+        background-color:black;
+        color:white;
+        text-align:center;
+        padding:5px;
+    }
+    .nav{
+        line-height:30px;
+        background-color:#dff0ff;
+        height:100%;
+        position: fixed;
+    }
+    .ul_{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .li_{
+        text-decoration: none;
+        color: black;
+    }
+    .section{
+        width:auto;
+        padding:0px 150px;
+    }
+    .footer{
+        color:black;
+        text-align:center;
+    }
+</style>
 
 <script>
     window.onload=function(){
@@ -52,11 +52,33 @@
 
     function getTime() {
         var myDate = new Date();
-        var date = myDate.toLocaleDateString();
-        var hours = myDate.getHours();
-        var minutes = myDate.getMinutes();
-        var seconds = myDate.getSeconds();
-        document.getElementById("demo").innerHTML = (date + " " + hours + ":"+minutes+ ":"+seconds);//将值赋给div
+        // var date = myDate.toLocaleDateString();
+        var y = myDate.getFullYear();
+        var M = myDate.getMonth() + 1;  //0-11
+        var d = myDate.getDate();       //1-31
+        var h = myDate.getHours();      //0-23
+        var m = myDate.getMinutes();    //0-59
+        var s = myDate.getSeconds();    //0-59
+        
+        y = fixPrefix0(y);
+        M = fixPrefix0(M);
+        d = fixPrefix0(d);
+        h = fixPrefix0(h);
+        m = fixPrefix0(m);
+        s = fixPrefix0(s);
+        //将值赋给div
+
+        var ret = y + "-" + M + "-" + d + " " + h + ":" + m + ":" + s;
+        //每1s执行一次
+        document.getElementById("nowTime").innerHTML = "当前时间：" + ret;
+    }
+
+    function fixPrefix0(value) {
+        if(value < 10){
+            return "0" + value;
+        }else{
+            return value;
+        }
     }
 
 </script>
@@ -114,7 +136,7 @@
 		
 		<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1189063798,2093587943&fm=26&gp=0.jpg" alt="???"/>
 		<a href="https://www.baidu.com">bilibili</a>
-		<p id="demo">请你正常一点</p>
+		<p id="nowTime">请你正常一点</p>
 		<button type="button" onclick="showDate()">显示日期</button>
     </div>
     
