@@ -4,11 +4,7 @@
 <head>
 	<!--定义窗口名字-->
 	<title>测试网页</title>
-	<script>
-		function showDate(){
-            document.getElementById("demo").innerHTML=Date();
-		}
-	</script>
+	
     <style>
     	.header{
         	background-color:black;
@@ -44,6 +40,26 @@
         }
     </style>
 </head>
+
+<script>
+    window.onload=function(){
+        setInterval("getTime()", 1000);
+    }
+
+    function showDate(){
+        document.getElementById("demo").innerHTML=Date();
+    }
+
+    function getTime() {
+        var myDate = new Date();
+        var date = myDate.toLocaleDateString();
+        var hours = myDate.getHours();
+        var minutes = myDate.getMinutes();
+        var seconds = myDate.getSeconds();
+        document.getElementById("demo").innerHTML = (date + " " + hours + ":"+minutes+ ":"+seconds);//将值赋给div
+    }
+
+</script>
 
 <!--修改背景颜色-->
 <body bgcolor="f0f8ff">
